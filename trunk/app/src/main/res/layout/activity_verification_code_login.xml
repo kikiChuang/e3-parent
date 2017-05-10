@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_verification_code_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/marg_left"
+    android:paddingRight="@dimen/marg_right"
+    tools:context="com.jddfun.game.Act.VerificationCodeLogin">
+    <Button
+        android:id="@+id/close"
+        android:text="关闭"
+        style="@style/close"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="验证码登录"
+        android:textColor="@color/textColor_4d"
+        android:textSize="@dimen/textSize_18"/>
+
+    <EditText
+        android:id="@+id/phone"
+        style="@style/base_edit"
+        android:layout_marginTop="30dp"
+        android:hint="手机号码"/>
+
+    <TextView
+        style="@style/infoline"
+        android:layout_marginTop="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/verificationCode"
+            style="@style/base_edit"
+            android:layout_centerVertical="true"
+            android:hint="验证码"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/sendVerificationCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="发送验证码"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/confirm"
+       style="@style/confirmButton"
+        android:text="确认"/>
+
+</LinearLayout>

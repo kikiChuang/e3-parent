@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="bgColor" format="color" />
+    <attr name="fgColor" format="color" />
+    <attr name="percent" format="float" />
+    <attr name="startAngle" format="float" />
+
+    <declare-styleable name="SectorProgressView">
+        <attr name="bgColor" />
+        <attr name="fgColor" />
+        <attr name="percent" />
+        <attr name="startAngle" />
+    </declare-styleable>
+
+    <declare-styleable name="ColorfulRingProgressView">
+        <attr name="bgColor" />
+        <attr name="fgColorStart" format="color" />
+        <attr name="fgColorEnd" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="percent" />
+        <attr name="startAngle" />
+    </declare-styleable>
+
+    <declare-styleable name="ImageCycleView">
+        <attr name="pointInPager" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="mutate_background" format="boolean" />
+        <attr name="isoval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+    <declare-styleable name="DotsProgressBar">
+        <!-- 前进的速度 -->
+        <attr name="barSpeed">
+            <enum name="normal" value="120"/>
+            <enum name="slow" value="60"/>
+            <enum name="fast" value="10"/>
+        </attr>
+        <!-- 节点的数量 -->
+        <attr name="barDotsCount" format="integer"/>
+        <!-- 节点的圆半径 -->
+        <attr name="barDotsRadius" format="dimension|reference"/>
+        <!-- 进度条的宽度 -->
+        <attr name="barProgressWidth" format="dimension|reference"/>
+        <!-- 进度条的背景色 -->
+        <attr name="barBackColor" format="color|reference"/>
+        <!-- 进度条的前景色 -->
+        <attr name="barFrontColor" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="MagicFlyLinearLayout">
+        <attr name="flyAnimatorType">
+            <enum name="B2TScatter" value="0"/>
+            <enum name="T2BRainNormal" value="1"/>
+        </attr>
+        <attr name="flyDuration" format="integer"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_mes_rl"
+    android:layout_width="wrap_content"
+    android:layout_height="115dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/item_raiders"
+    android:elevation="0.5dip"
+    android:orientation="vertical">
+
+
+    <com.jddfun.game.View.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/all_mes_Img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/tacitly_approve"
+        app:corner_radius="5dp" />
+
+
+    <LinearLayout
+        android:id="@+id/all_mes_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/all_mes_Img"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/all_mes_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="米酒红：梦想飞镖干货分享"
+            android:textColor="#4d4d4d"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/all_mes_context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="资深玩家的潜心力作，小编看完连胜3局"
+            android:textColor="#808080"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frag_allmess_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/catch_sight_of"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/all_mes_catch_sight_of_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="1w3"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/all_mes_my_view_help_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/help" />
+
+        <TextView
+            android:id="@+id/all_mes_help_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="36" />
+    </LinearLayout>
+</RelativeLayout>

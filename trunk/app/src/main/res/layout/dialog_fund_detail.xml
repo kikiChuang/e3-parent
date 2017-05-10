@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="90dp"
+              android:layout_height="90dp"
+              android:gravity="center"
+              android:layout_marginTop="5dp"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/fund_detail_moon"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:elevation="3dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/dialog_top"
+        android:gravity="center"
+        android:text="2017年1月"
+        />
+
+
+    <TextView
+        android:id="@+id/fund_detail_moon_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:elevation="3dp"
+        android:background="@drawable/dialog_two"
+        android:text="2017年2月"
+        />
+
+
+    <TextView
+        android:id="@+id/fund_detail_moon_3"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:background="@drawable/dialog_button"
+        android:elevation="3dp"
+        android:paddingBottom="5dp"
+        android:text="2017年3月"
+        />
+
+
+</LinearLayout>

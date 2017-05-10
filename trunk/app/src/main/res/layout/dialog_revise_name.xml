@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="修改昵称"
+            android:textColor="#4d4d4d"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/ubber_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/close_dialog" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改昵称"
+            android:textColor="#808080"
+            android:textSize="15sp" />
+
+        <com.jddfun.game.View.ContainsEmojiEditText
+            android:id="@+id/revise_setName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="28dp"
+            android:layout_weight="4"
+            android:maxLength = "8"
+            android:background="@drawable/dialog_edit"
+            android:hint="昵称仅可以修改一次"
+            android:paddingLeft="10dp"
+            android:textColorHint="#cccccc" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/revise_name_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/revise_name_ok"
+        android:text="确认"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="20dp"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

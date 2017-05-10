@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/marg_right"
+        android:paddingRight="@dimen/marg_left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="70dp"
+            android:text="创建帐号"
+            android:textColor="@color/textColor_4d"
+            android:textSize="@dimen/textSize_18" />
+
+        <TextView
+            android:id="@+id/count_phone_point_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="手机号码"
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/base_edit"
+            android:layout_marginTop="10dp"
+            android:hint="手机号码"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:numeric="integer" />
+
+        <View
+            style="@style/main_line"
+            android:layout_marginTop="10dp" />
+
+
+        <TextView
+            android:id="@+id/count_verificationCode_point_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="验证码"
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_code"
+                style="@style/base_edit"
+                android:layout_centerVertical="true"
+                android:hint="验证码"
+                android:inputType="phone"
+                android:maxLength="6"
+                android:numeric="integer" />
+
+            <TextView
+                android:id="@+id/tv_send_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/et_code"
+                android:layout_centerVertical="true"
+                android:text="发送验证码"
+                android:textColor="#808080"
+                android:textSize="@dimen/textSize_12" />
+        </RelativeLayout>
+
+        <View
+            style="@style/main_line"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/forget_confirmNewPwd_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="设置新密码(6-15个字符)"
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            style="@style/base_edit"
+            android:layout_marginTop="10dp"
+            android:hint="设置新密码(6-15个字符)"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:password="true" />
+
+        <View
+            style="@style/main_line"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/forget_again_confirmNewPwd_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="重新确认密码"
+            android:textColor="#cccccc"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/et_confirm_pwd"
+            style="@style/base_edit"
+            android:layout_marginTop="10dp"
+            android:hint="重新确认密码"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:password="true" />
+
+        <View
+            style="@style/main_line"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/count_consent_registration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_register_agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/agree" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="同意"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/register_user_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="《用户注册协议》"
+                android:textColor="#5b89ae"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/confirmButton"
+            android:layout_marginTop="35dp"
+            android:text="确认"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_16" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/attention"
+            android:textColor="#bcbdc5"
+            android:textSize="@dimen/textSize_12" />
+    </LinearLayout>
+</ScrollView>

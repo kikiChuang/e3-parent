@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">微竞猜</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="slide_1_title">Lonely</string>
+    <string name="slide_2_title">Meet</string>
+    <string name="slide_3_title">Fall in love at first sight</string>
+    <string name="attention"> 温馨提示：\n·运营商发送短信可能有延迟，请您耐心等待几分钟\n·如果您无法接受验证码，请您重新获取</string>
+    <string name="setting">设置</string>
+    <string name="perm_tip"> 当前应用缺少必要权限。\n请点击"设置"-"权限"-打开所需权限。\n最后点击两次后退按钮，即可返回。</string>
+    <string name="ask_again">请给予应用必要权限，让程序可正常工作。</string>
+    <string name="cancel">取消</string>
+    <string name="camera">请给予相机权限</string>
+    <string name="pop">允许读取手机状态的权限</string>
+</resources>

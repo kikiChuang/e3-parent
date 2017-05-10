@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/item_raiders"
+        android:elevation="0.5dip"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/centerf_rl"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            >
+
+            <TextView
+                android:id="@+id/centerf_round_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/lamp_bulb"
+                />
+
+            <TextView
+                android:id="@+id/allmessage_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/centerf_round_dot"
+                android:text="什么样的分享才能获得金叶子？"
+                android:textSize="15sp"
+                />
+
+            <ImageView
+                android:id="@+id/allmessage_ash_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/ash_down"
+                />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/allmessage_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#dadde6"
+            android:visibility="gone"
+            ></View>
+
+        <TextView
+            android:id="@+id/allmessage_context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="5dp"
+            android:visibility="gone"
+            android:text="春天来了，花开了，鸟叫了，我们也发福利了。就在今日，给你500金叶子，请在福利-金叶子消息中查询。"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,403 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "com.jddfun.game"
+        minSdkVersion 19
+        maxSdkVersion 22
+        targetSdkVersion 22
+        versionCode 2
+        versionName "1.0.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+        resConfigs "zh"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("JDD.jks")
+            storePassword "jdd123456"
+            keyAlias "JddGame"
+            keyPassword "jdd123456"
+        }
+
+        debug {
+            storeFile file("JDD.jks")
+            storePassword "jdd123456"
+            keyAlias "JddGame"
+            keyPassword "jdd123456"
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/rxjava.PROPERTIES'
+        exclude 'META-INF/RXJAVA.properties'
+        exclude 'META-INF/RXJAVA.PROPERTIES'
+        exclude 'META-INF/rxjava'
+        exclude 'META-INF/RXJAVA'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
+            debuggable true
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [
+                    UMENG_APPKEY        : "58ee16b04544cb6bba000cb2",
+                    UMENG_MESSAGE_SECRET: "12735c43c140a329d95a88a61df3249a",
+            ]
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            debuggable false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //正式版发布环境
+            manifestPlaceholders = [
+                    UMENG_APPKEY        : "58ee16b04544cb6bba000cb2",
+                    UMENG_MESSAGE_SECRET: "12735c43c140a329d95a88a61df3249a",
+            ]
+        }
+
+
+        configurations.all {
+            resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+
+
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        File outputDirectory = new File(outputFile.parent);
+                        def fileName
+                        if (variant.buildType.name == "release") {
+                            fileName = "weguessing_${variant.productFlavors[0].properties.get("manifestPlaceholders").getAt("APP_CHANNEL")}_${defaultConfig.versionName}.apk"
+                            output.outputFile = new File(outputDirectory, fileName)
+                        } else if (variant.buildType.name == "debug") {
+                            fileName = "jingcai_debug_${variant.productFlavors[0].properties.get("manifestPlaceholders").getAt("APP_CHANNEL")}_${defaultConfig.versionName}.apk"
+                            output.outputFile = new File(outputDirectory, fileName)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    productFlavors {
+        //通用版市场
+        normal {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001",
+                    UMENG_CHANNEL: "normal"
+            ]
+        }
+        //应用宝市场
+        tencent {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001001",
+                    UMENG_CHANNEL: "tencent"
+            ]
+        }
+
+        //百度市场
+        baidu {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001002",
+                    UMENG_CHANNEL: "baidu"
+            ]
+        }
+
+        //奇虎360
+        qihoo360 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001003",
+                    UMENG_CHANNEL: "qihoo360"
+            ]
+        }
+        //华为
+        huawei {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001004",
+                    UMENG_CHANNEL: "huawei"
+            ]
+        }
+
+        //小米市场
+        xiaomi {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001005",
+                    UMENG_CHANNEL: "xiaomi"
+            ]
+        }
+
+        //oppo
+        oppo {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001006",
+                    UMENG_CHANNEL: "oppo"
+            ]
+        }
+        //vivo
+        vivo {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001007",
+                    UMENG_CHANNEL: "vivo"
+            ]
+        }
+        //阿里分发
+        ali {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001008",
+                    UMENG_CHANNEL: "ali"
+            ]
+        }
+        //三星
+        sungxing {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001009",
+                    UMENG_CHANNEL: "sungxing"
+            ]
+        }
+
+        //sougou
+        sougou {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001010",
+                    UMENG_CHANNEL: "sougou"
+            ]
+        }
+        //lenovo
+        lenovo {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001011",
+                    UMENG_CHANNEL: "lenovo"
+            ]
+        }
+
+        //魅族
+        meizu {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001012",
+                    UMENG_CHANNEL: "meizu"
+            ]
+        }
+        //金立
+        jinli {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "200001013",
+                    UMENG_CHANNEL: "jinli"
+            ]
+        }
+        //WAP官网
+        WAP {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100000",
+                    UMENG_CHANNEL: "WAP"
+            ]
+        }
+        //金山彩票
+        jinshan {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100001",
+                    UMENG_CHANNEL: "jinshan"
+            ]
+        }
+        //逗游
+        douyou {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100002",
+                    UMENG_CHANNEL: "douyou"
+            ]
+        }
+        //个推
+        getui {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100003",
+                    UMENG_CHANNEL: "getui"
+            ]
+        }
+        //微拓
+        weituo {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100004",
+                    UMENG_CHANNEL: "weituo"
+            ]
+        }
+        //逗游-子渠道1
+        douyou1 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100002001",
+                    UMENG_CHANNEL: "douyou1"
+            ]
+        }
+        //逗游-子渠道2
+        douyou2 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100002002",
+                    UMENG_CHANNEL: "douyou2"
+            ]
+        }
+        //逗游-子渠道3
+        douyou3 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100002003",
+                    UMENG_CHANNEL: "douyou3"
+            ]
+        }
+        //逗游-子渠道4
+        douyou4 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100002004",
+                    UMENG_CHANNEL: "douyou4"
+            ]
+        }
+        //逗游-子渠道5
+        douyou5 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100002005",
+                    UMENG_CHANNEL: "douyou5"
+            ]
+        }
+        //个推-子渠道1
+        getui1 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100003001",
+                    UMENG_CHANNEL: "getui1"
+            ]
+        }
+        //个推-子渠道2
+        getui2 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100003002",
+                    UMENG_CHANNEL: "getui2"
+            ]
+        }
+        //个推-子渠道3
+        getui3 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100003003",
+                    UMENG_CHANNEL: "getui3"
+            ]
+        }
+        //个推-子渠道4
+        getui4 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100003004",
+                    UMENG_CHANNEL: "getui4"
+            ]
+        }
+        //个推-子渠道5
+        getui5 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100003005",
+                    UMENG_CHANNEL: "getui5"
+            ]
+        }
+        //微拓-子渠道1
+        weituo1 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100004001",
+                    UMENG_CHANNEL: "weituo1"
+            ]
+        }
+        //微拓-子渠道2
+        weituo2 {
+            manifestPlaceholders = [
+                    APP_CHANNEL  : "100004002",
+                    UMENG_CHANNEL: "weituo2"
+            ]
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:multidex:1.0.0'
+    compile project(':PushSDK')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.0.2'
+    compile 'com.android.support:design:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.android.support:recyclerview-v7:24.0.1'
+    //    compile 'cn.bingoogolapple:bga-swipeitemlayout:1.0.4@aar'
+
+//    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+//    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+//    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    compile 'com.squareup.okio:okio:1.12.0'
+
+    //RxAndroid
+//    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+//    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.9'
+//    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+
+
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile('com.trello:rxlifecycle-components:1.0', {
+        exclude group: 'io.reactivex'
+    })
+    compile files('libs/zwxh5sdk-1.5.1.jar')
+    compile 'com.github.lzyzsd:jsbridge:1.0.4'
+    /*圆头像*/
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //Glide
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'com.android.support:support-v4:24.0.0'
+    compile files('libs/badgeview.jar')
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
+    //自定义开关
+    compile 'ch.ielse:switchbutton:1.0.0'
+    //七鱼
+    compile 'com.qiyukf.unicorn:unicorn:3.5.0'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    //图片选择器
+    compile 'com.github.lovetuzitong:MultiImageSelector:1.2'
+    //刷新
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    //图片压缩
+    compile 'top.zibin:Luban:1.0.9'
+    //倒计时
+    compile 'com.github.lgw666:SimpleCountDownTimer:1.1'
+    //弹簧
+    compile 'com.facebook.rebound:rebound:0.3.8'
+}
+

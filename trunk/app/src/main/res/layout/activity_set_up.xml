@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:elevation="5dp"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_head"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/set_up_notice_rl"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/set_up_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/info_money"
+                android:text="通知中心"
+                android:textColor="@color/myinfo_item_text"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/right" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/main_line"
+            android:layout_marginLeft="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/phone_binding"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/myinfo_item">
+
+
+            <TextView
+                android:id="@+id/safe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/info_material_benefits"
+                android:text="手机绑定"
+                android:textColor="@color/myinfo_item_text"
+                android:textSize="15sp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/set_up_no_bing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="未绑定" />
+
+                <ImageView
+                    android:id="@+id/set_up_bind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@mipmap/bind"
+                    android:text="未绑定"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/iv_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@mipmap/right" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            style="@style/main_line"
+            android:layout_marginLeft="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/set_up_clean_up_rl"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/myinfo_item">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/info_account_number"
+                android:text="清除缓存"
+                android:textColor="@color/myinfo_item_text"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/set_up_cache"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="0kb" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@mipmap/right" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            style="@style/main_line"
+            android:layout_marginLeft="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/set_up_help_center"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/myinfo_item">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/info_custom_service"
+                android:text="帮助中心"
+                android:textColor="@color/myinfo_item_text"
+                android:textSize="15sp" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/right" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/main_line"
+            android:layout_marginLeft="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/frag_info_set_up"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/frag_info">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/info_set_up"
+                android:text="关于我们"
+                android:textColor="@color/myinfo_item_text"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/right" />
+
+        </RelativeLayout>
+
+        <View style="@style/main_line" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/set_up_withdraw_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@mipmap/withdraw_from"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

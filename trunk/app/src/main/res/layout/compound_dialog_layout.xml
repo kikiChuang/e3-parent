@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/dialog_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:text="凑齐100可兑换京东券一张"
+                android:textColor="@color/text_color_02"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/title_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="碎片可以在通过什么方式获得"
+                android:textColor="@color/text_color_03"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/confirm_or_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@mipmap/combine_color_bg"
+                android:paddingBottom="3dp"
+                android:text="合成碎片"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="80dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/debris_bg"
+            android:padding="2dp" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="38dp"
+            android:src="@mipmap/close_dialog" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

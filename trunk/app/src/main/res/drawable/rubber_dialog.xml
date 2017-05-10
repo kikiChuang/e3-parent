@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--画实线透明边框背景-->
+    <!-- 圆角 -->
+    <corners
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:radius="10dp"
+        android:topLeftRadius="10dp"
+        android:color="@android:color/black"
+        android:topRightRadius="10dp" />
+    <!-- 描边 -->
+    <stroke
+        android:width="0.5dp"
+        android:color="@android:color/white" />
+
+    <gradient
+        android:centerColor="@android:color/white"
+        android:startColor="@android:color/white"
+        android:endColor="@android:color/white"
+        ></gradient>
+
+</shape>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_head" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fun_detail"
+        android:layout_marginRight="10dp">
+
+        <EditText
+            android:id="@+id/pulish_ed"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:gravity="left"
+            android:hint="分享中奖信息或心得最高可赢1000金叶子,最少15字"
+            android:paddingTop="10dp"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLength="140"
+            android:textColorHint="#cccccc" />
+
+        <TextView
+            android:id="@+id/pulish_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/publisj"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="0/140"
+            android:layout_marginTop="10dp"
+            android:layout_below ="@+id/pulish_ed"
+            android:textColor="@android:color/white" />
+
+        <GridView
+            android:id="@+id/publicsh_GridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below ="@+id/pulish_tx"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:columnWidth="190dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/publish_publish"
+        style="@style/confirmButton"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="确定发布"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+</LinearLayout>

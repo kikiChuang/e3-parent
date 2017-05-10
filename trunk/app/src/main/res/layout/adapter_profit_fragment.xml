@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="3dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/frag_profit_personal_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/act_sorting_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:src="@mipmap/first"
+            />
+
+
+        <TextView
+            android:id="@+id/frag_profit_personal_icon_data"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/frag_profit_personal_name"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="红中三哥"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/frag_profit_personal_amount"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="336254"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/frag_profit_personal_awardsName"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1000彩金卡"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:background="#e0e3ea"
+        ></View>
+
+</LinearLayout>
