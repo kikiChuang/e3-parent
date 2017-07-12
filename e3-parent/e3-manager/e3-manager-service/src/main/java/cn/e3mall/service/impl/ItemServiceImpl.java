@@ -1,10 +1,16 @@
 package cn.e3mall.service.impl;
 
+import cn.e3mall.common.pojo.EsayUIDataGridResult;
 import cn.e3mall.mapper.TbItemMapper;
 import cn.e3mall.pojo.TbItem;
+import cn.e3mall.pojo.TbItemExample;
 import cn.e3mall.service.ItemService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * 商品管理service
@@ -30,4 +36,21 @@ public class ItemServiceImpl implements ItemService {
 
         return itemMapper.selectByPrimaryKey(itemId);
     }
+
+    @Override
+    public EsayUIDataGridResult getItemList(int page, int rows) {
+        //设置分页信息,执行查询
+        //取分页信息
+        PageHelper.startPage(page, rows);
+        TbItemExample tbItemExample = new TbItemExample();
+        List<TbItem> list = itemMapper.selectByExample(tbItemExample);
+        PageInfo<TbItem> pageInfo = new PageInfo(list);
+        long total = pageInfo.getTotal();
+        EsayUIDataGridResult result = new EsayUIDataGridResult();
+        result.setTotal(total);
+        result.setRows(list);
+        return result;
+    }
+
+
 }

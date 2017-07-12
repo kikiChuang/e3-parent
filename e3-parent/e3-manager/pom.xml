@@ -11,13 +11,6 @@
 
     <artifactId>e3-manager</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>e3-manager-pojo</module>
-        <module>e3-manager-dao</module>
-        <module>e3-manager-interface</module>
-        <module>e3-manager-service</module>
-    </modules>
-
     <dependencies>
         <dependency>
             <artifactId>e3-common</artifactId>
@@ -25,6 +18,13 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <modules>
+        <module>e3-manager-pojo</module>
+        <module>e3-manager-dao</module>
+        <module>e3-manager-interface</module>
+        <module>e3-manager-service</module>
+    </modules>
+
 
     <build>
         <plugins>
@@ -34,7 +34,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>8080</port>
+                    <port>8082</port>
                 </configuration>
             </plugin>
         </plugins>
