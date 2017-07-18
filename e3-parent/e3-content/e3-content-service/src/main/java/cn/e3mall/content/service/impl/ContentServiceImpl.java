@@ -36,6 +36,7 @@ public class ContentServiceImpl implements ContentService {
         content.setUpdated(new Date());
         contentMapper.insert(content);
         E3Result e3Result = E3Result.ok();
+        jedisClientPool.hdel(content_list, content.getCategoryId().toString());
         return e3Result;
     }
 
